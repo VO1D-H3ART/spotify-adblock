@@ -26,6 +26,11 @@ $ make
 $ sudo make install
 ```
 
+If the make fails then you can try this command. Remeber you must be in the same directory as the git hub project.
+```
+cargo build --release
+```
+
 #### Flatpak
 ```bash
 $ mkdir -p ~/.spotify-adblock && cp target/release/libspotifyadblock.so ~/.spotify-adblock/spotify-adblock.so
@@ -37,12 +42,22 @@ $ flatpak override --user --filesystem="~/.spotify-adblock/spotify-adblock.so" -
 ### Command-line
 
 This line must be used inside the same directory where you built the package - this is a pain
+
 ```bash
 $ LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 ```
+
+or for the fish shell
+
 ```fish
 env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 ```
+
+### Quaility of life 
+
+
+
+
 
 
 #### Flatpak
