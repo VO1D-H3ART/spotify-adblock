@@ -5,13 +5,15 @@ Spotify adblocker for Linux (macOS untested) that works by wrapping `getaddrinfo
 * This **does not** work with the snap Spotify package.
 * This **might not** work with the Flatpak Spotify package, depending on your system's shared libraries' versions.
 * On Debian-based distributions (e.g. Ubuntu), the Debian Spotify package can be installed by following the instructions at the bottom of [this page](https://www.spotify.com/us/download/linux/). *(recommended)*
+* If you are on Arch make sure to use AUR version of spotify as it is easier to set up than the flatpak
 
 ## Build
 Prerequisites:
 * Git
 * Make
 * Rust
-* [Cargo](https://doc.rust-lang.org/cargo/)
+* [Cargo](https://doc.rust-lang.org/cargo/) - Since this is a rust package you need cargo in order to make and build the adblock
+
 
 ```bash
 $ git clone https://github.com/abba23/spotify-adblock.git
@@ -33,9 +35,15 @@ $ flatpak override --user --filesystem="~/.spotify-adblock/spotify-adblock.so" -
 
 ## Usage
 ### Command-line
+
+This line must be used inside the same directory where you built the package - this is a pain
 ```bash
 $ LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 ```
+```fish
+env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
+```
+
 
 #### Flatpak
 ```bash
