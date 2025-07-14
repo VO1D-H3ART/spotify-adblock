@@ -53,7 +53,11 @@ or for the fish shell
 env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 ```
 
-### Quaility of life 
+### Quaility of life - In case something goes wrong
+This is my contribution to this particular project:
+I have created spotify-start.sh which is the script you should be referencing when trying to run the adblocked Spotify from anywhere in the terminal.
+Check below for the updated .desktop file under the Debian/Arch section 
+The spotify-start.sh also allows you to use a keybind if you are using a tiling window manager like i3
 
 
 
@@ -71,7 +75,7 @@ You can integrate it with your desktop environment by creating a `.desktop` file
 Examples:
 
 <details> 
-  <summary>Debian Package</summary>
+  <summary>Debian/Arch AUR Package</summary>
   <p>
 
 ```
